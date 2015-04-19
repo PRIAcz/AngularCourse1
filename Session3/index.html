@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <base href="/">
+
+    <title>AngularJS</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js"></script>
+
+    <script src="app/app.modules.js"></script>
+
+    <script src="app/TodoApp/HeartReplaceFilter.js"></script>
+    <script src="app/TodoApp/ItemsCounterDirective.js"></script>
+    <script src="app/TodoApp/HelperService.js"></script>
+    <script src="app/TodoApp/ItemEntity.js"></script>
+    <script src="app/TodoApp/ItemsModel.js"></script>
+    <script src="app/TodoApp/Controller/ListController.js"></script>
+    <script src="app/TodoApp/Controller/AddController.js"></script>
+</head>
+
+<body>
+    <div class="container" data-ng-app="TodoApp">
+        <div data-ng-view></div>
+    </div>
+</body>
+
+</html>

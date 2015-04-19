@@ -1,0 +1,29 @@
+<div class="starter-template" data-ng-controller="TodoListController">
+    <h1>TODO List</h1>
+    <items-counter items="Items"></items-counter>
+
+    <p><a data-ng-href="/add">Add new task</a></p>
+
+    <div class="todo-list">
+        <table class="table table-striped table-bordered">
+            <tbody>
+                <tr data-ng-repeat="item in Items track by item.Id" data-ng-class="{success: item.State}">
+                    <td width="20%">
+                        <strong>{{ item.Title }}</strong>
+                    </td>
+                    <td>
+                        <p>
+                            {{ item.Description | HeartReplace }}
+                        </p>
+                    </td>
+                    <td width="5%">
+                        <input type="checkbox" data-ng-checked="item.State" data-ng-click="UpdateItemState(item)" />
+                    </td>
+                    <td width="5%">
+                        <input class="btn btn-danger" type="button" value="Delete" data-ng-click="DeleteItem(item)" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

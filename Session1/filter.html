@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AngularJS</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script type="text/javascript">
+        var adminModule = angular.module("AdminModule", []);
+
+        adminModule.controller("UsersController", ["$scope", function ($scope) {
+            $scope.Users = [
+                {
+                    Name: "James",
+                    Surname: "Bond",
+                    BankBalance: 125452.007
+                },
+                {
+                    Name: "Darth",
+                    Surname: "Vader",
+                    BankBalance: 852123.952
+                }
+            ];
+        }]);
+    </script>
+</head>
+
+<body data-ng-app="AdminModule">
+    <div data-ng-controller="UsersController">
+        <h1>List of users</h1>
+
+        <p>Filter by name: <input type="text" data-ng-model="filterName" /></p>
+        <div data-ng-repeat="user in Users | orderBy:'Name' | filter:filterName">
+            <p>{{ user.Name }} {{ user.Surname | uppercase }} have <strong>{{ user.BankBalance | currency:"$" }}</strong></p>
+        </div>
+    </div>
+</body>
+
+</html>
+
