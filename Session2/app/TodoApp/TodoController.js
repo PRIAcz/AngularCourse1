@@ -1,4 +1,4 @@
-function TodoController($scope, $window, hh, hh2, ItemEntity, ItemsModel) {
+function TodoController($scope, $window, ItemEntity, ItemsModel) {
     $scope.NewItem = new ItemEntity();
 
     $scope.Items = ItemsModel.Items;
@@ -23,4 +23,4 @@ function TodoController($scope, $window, hh, hh2, ItemEntity, ItemsModel) {
     };
 }
 
-TodoAppModule.controller("TodoController", ["$scope", "$window", "HelperService", "HelperService", "ItemEntity", "ItemsModel", TodoController]);
+TodoAppModule.controller("TodoController", ["$scope", "$window", "ItemEntity", "ItemsModel", TodoController]);
